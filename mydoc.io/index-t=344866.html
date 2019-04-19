@@ -1,0 +1,382 @@
+						
+							<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>Jeecg-Boot 技术文档_V1.1</title>
+  	<meta name="description" content="jeecg-boot
+前后端分离架构，springboot版本+antd vue前端" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	<link rel="shortcut icon" type="image/x-icon" href="img/32logo_green-t=1451964198000.ico"/>
+	<link href="css/team/document-t=1451964198000.css" rel="stylesheet" />
+	<link href="css/team/font-awesome/font-awesome.min-t=1451964198000.css" rel="stylesheet" />
+  	<link rel="stylesheet" href="css/document/hexo_io/style-t=1453329166000.css" type="text/css">
+	<link rel="stylesheet" href="js/highlight/styles/docco-t=1451964198000.css">
+  	<script src="js/2012/jquery-1.7.1.min-t=1451964198000.js" type="text/javascript"></script>
+	<script src="js/highlight/highlight.pack-t=1451964198000.js"></script>
+    <script type="text/javascript" src="https://static.oschina.net/build/team/javascripts/vendor/markdown/marked.js?t=1468881669000"></script>
+</head>
+
+<body>
+	<header id="header">
+  	<div class="outer">
+    	<div class="inner">
+	      	<div class="navi_icon icon_no_active" id="navi_icon">
+				<i class="fa fa-list"></i>
+			</div>
+	      	<h1 id="logo-wrap" style="font-size: 30px;">
+	      		Jeecg-Boot 技术文档
+	      	</h1>
+	      	<span class="version_s">
+	      		V1.1
+	      	</span>
+	      	<div class="dl_icon" id="dl_icon">
+				<a href="index-p=show&amp;v=46091.html" target="_blank" title="下载当前文档"><i class="fa fa-download"></i></a>
+			</div>
+	      	<nav id="main-nav" class="search_area">
+	        	<input type="text" name="s_q" placeholder="搜索文档的内容" value=""/>
+	        	<input type="button" id="s_btn" value="搜索"/>
+	      	</nav>
+	      	<form action="" method="get" id="s_form" autocomplete="off">
+	        	<input type="hidden" name="q"/>
+	        		        	<input type="hidden" name="p" value="search"/>
+	      	</form>
+      	<div>
+  	</div>
+</header>
+<script type="text/javascript">
+	$("#main-nav").on("keydown", function(e){
+		if (e.keyCode == 13) {
+			$("#s_btn").trigger("click");
+		}
+	});
+	$("#s_btn").on("click", function(){
+		var q = $("input[name='s_q']").val();
+		if(q==""){
+			alert("请输入搜索词");
+			return;
+		}
+		q = encodeURI(q);
+		$("input[name='q']").val(q);
+		$("#s_form").submit();
+	});
+	
+	$("#navi_icon").on("click", function(){
+		if($("#sidebar").hasClass("navi_show")){
+			$("#sidebar").removeClass("navi_show");
+			$("#sidebar").addClass("navi_hidden");
+			$("#navi_icon").removeClass("icon_active");
+			$("#navi_icon").addClass("icon_no_active");
+		}else{
+			$("#sidebar").removeClass("navi_hidden");
+			$("#sidebar").addClass("navi_show");
+			$("#navi_icon").addClass("icon_active");
+			$("#navi_icon").removeClass("icon_no_active");
+		}
+	});
+</script>  	<article class="page">
+  		<div class="outer">
+    		<div id="mobile-menu-wrap"></div>
+			<aside id="sidebar" class="navi_hidden">
+																																																		<a href="index-t=344844.html" id="text_344844" class="sidebar-link document_a">
+									<em class="fa fa fa-angle-right document_em"></em>项目介绍
+								</a>
+																																																							<a href="index-t=344845.html" id="text_344845" class="sidebar-link document_a">
+									<em class="fa fa fa-angle-right document_em"></em>新手学习思路【零基础入门】
+								</a>
+																																	<strong class="sidebar-title">开发环境准备</strong>
+																																					<a href="index-t=344846.html" style="margin-left: 3px" id="text_344846" class="sidebar-link">
+							技术点
+						</a>
+																																										<a href="index-t=344847.html" style="margin-left: 3px" id="text_344847" class="sidebar-link">
+							开发工具安装
+						</a>
+																																										<a href="index-t=344848.html" style="margin-left: 3px" id="text_344848" class="sidebar-link">
+							开发环境搭建
+						</a>
+																																										<a href="index-t=344849.html" style="margin-left: 3px" id="text_344849" class="sidebar-link">
+							如何启动项目
+						</a>
+																																										<a href="index-t=344850.html" style="margin-left: 3px" id="text_344850" class="sidebar-link">
+							Maven私服设置
+						</a>
+																																										<a href="index-t=344902.html" style="margin-left: 3px" id="text_344902" class="sidebar-link">
+							websorm svn下载项目
+						</a>
+																																			<strong class="sidebar-title">快速开始</strong>
+																																					<a href="index-t=344851.html" style="margin-left: 3px" id="text_344851" class="sidebar-link">
+							Hello World
+						</a>
+																																			<strong class="sidebar-title">上线发布</strong>
+																																					<a href="index-t=344852.html" style="margin-left: 3px" id="text_344852" class="sidebar-link">
+							简易发布方案
+						</a>
+																																										<a href="index-t=344853.html" style="margin-left: 3px" id="text_344853" class="sidebar-link">
+							WAR发布方案
+						</a>
+																																			<strong class="sidebar-title">代码生成器用法</strong>
+																																					<a href="index-t=344854.html" style="margin-left: 3px" id="text_344854" class="sidebar-link">
+							如何使用代码生成器？
+						</a>
+																																										<a href="index-t=344855.html" style="margin-left: 3px" id="text_344855" class="sidebar-link">
+							代码生成器模板
+						</a>
+																																			<strong class="sidebar-title">后端开发技巧</strong>
+																																					<a href="index-t=344856.html" style="margin-left: 3px" id="text_344856" class="sidebar-link">
+							常用问题汇总
+						</a>
+																					
+								<strong class="sidebar-title" style="margin-left: 10px">菜单路由配置</strong>
+																																			<a href="index-t=344857.html" style="margin-left: 13px" id="text_344857" class="sidebar-link">
+							菜单配置说明
+						</a>
+																																										<a href="index-t=344867.html" style="margin-left: 13px" id="text_344867" class="sidebar-link">
+							路由菜单规则
+						</a>
+																																										<a href="index-t=344881.html" style="margin-left: 13px" id="text_344881" class="sidebar-link">
+							Online报表菜单如何配置？
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">系统权限</strong>
+																																			<a href="index-t=344871.html" style="margin-left: 13px" id="text_344871" class="sidebar-link">
+							按钮权限用法
+						</a>
+																																										<a href="index-t=344872.html" style="margin-left: 13px" id="text_344872" class="sidebar-link">
+							数据权限用法
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">自定义注解用法</strong>
+																																			<a href="index-t=344873.html" style="margin-left: 13px" id="text_344873" class="sidebar-link">
+							字典翻译注解@Dict
+						</a>
+																																										<a href="index-t=344875.html" style="margin-left: 13px" id="text_344875" class="sidebar-link">
+							日志记录注解@AutoLog
+						</a>
+																																										<a href="index-t=344876.html" style="margin-left: 13px" id="text_344876" class="sidebar-link">
+							数据权限注解@PermissionData
+						</a>
+																																										<a href="index-t=344877.html" style="margin-left: 13px" id="text_344877" class="sidebar-link">
+							Spring缓存注解@Cacheable
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">数据库设计规范</strong>
+																																			<a href="index-t=344882.html" style="margin-left: 13px" id="text_344882" class="sidebar-link">
+							建表规范
+						</a>
+																																																<a href="index-t=344858.html" style="margin-left: 3px" id="text_344858" class="sidebar-link">
+							事务如何使用？
+						</a>
+																																										<a href="index-t=344859.html" style="margin-left: 3px" id="text_344859" class="sidebar-link">
+							系统日志怎么插入？
+						</a>
+																																										<a href="index-t=344860.html" style="margin-left: 3px" id="text_344860" class="sidebar-link">
+							定时任务如何开发？
+						</a>
+																																										<a href="index-t=344861.html" style="margin-left: 3px" id="text_344861" class="sidebar-link">
+							redis 如何使用？
+						</a>
+																																										<a href="index-t=344862.html" style="margin-left: 3px" id="text_344862" class="sidebar-link">
+							动态数据源使用
+						</a>
+																																										<a href="index-t=344885.html" style="margin-left: 3px" id="text_344885" class="sidebar-link">
+							数据日志如何用？
+						</a>
+																																										<a href="index-t=344891.html" style="margin-left: 3px" id="text_344891" class="sidebar-link">
+							查询过滤器用法
+						</a>
+																																										<a href="index-t=344892.html" style="margin-left: 3px" id="text_344892" class="sidebar-link">
+							AutoPOI  EXCEL导出导入工具
+						</a>
+																																			<strong class="sidebar-title">UI前端开发技巧</strong>
+																																					<a href="index-t=344865.html" style="margin-left: 3px" id="text_344865" class="sidebar-link">
+							源码解读
+						</a>
+																																										<a href="index-t=344866.html" style="margin-left: 3px" id="text_344866" class="sidebar-link">
+							常用命令
+						</a>
+																																										<a href="index-t=344868.html" style="margin-left: 3px" id="text_344868" class="sidebar-link">
+							Form 表单开发特殊性
+						</a>
+																																										<a href="index-t=344869.html" style="margin-left: 3px" id="text_344869" class="sidebar-link">
+							报表开发技术点
+						</a>
+																																										<a href="index-t=344870.html" style="margin-left: 3px" id="text_344870" class="sidebar-link">
+							全局配置文件
+						</a>
+																					
+								<strong class="sidebar-title" style="margin-left: 10px">自定义组件</strong>
+																																			<a href="index-t=344863.html" style="margin-left: 13px" id="text_344863" class="sidebar-link">
+							JgEditableTable 帮助文档
+						</a>
+																																										<a href="index-t=344864.html" style="margin-left: 13px" id="text_344864" class="sidebar-link">
+							DictSelectTag字典标签
+						</a>
+																																										<a href="index-t=344874.html" style="margin-left: 13px" id="text_344874" class="sidebar-link">
+							高级查询组件文档和示例
+						</a>
+																																										<a href="index-t=344890.html" style="margin-left: 13px" id="text_344890" class="sidebar-link">
+							components包下文件描述
+						</a>
+																																									<strong class="sidebar-title">Online开发</strong>
+																
+								<strong class="sidebar-title" style="margin-left: 10px">Online图表</strong>
+																	
+								<strong class="sidebar-title" style="margin-left: 10px">Online表单</strong>
+																																			<a href="index-t=345038.html" style="margin-left: 13px" id="text_345038" class="sidebar-link">
+							online 自定义按钮
+						</a>
+																																										<a href="index-t=345055.html" style="margin-left: 13px" id="text_345055" class="sidebar-link">
+							online JS增强
+						</a>
+																																										<a href="index-t=345058.html" style="margin-left: 13px" id="text_345058" class="sidebar-link">
+							online SQL增强
+						</a>
+																																										<a href="index-t=345059.html" style="margin-left: 13px" id="text_345059" class="sidebar-link">
+							online java增强
+						</a>
+																																				</aside>
+			<div class="page-content" id="article_area">
+					<div style="padding: 20px 0; border-bottom: 1px dashed #ccc">
+	<h1 id="page-title" itemprop="name">常用命令</h1>
+</div>
+<div class="page-entry" itemprop="articleBody">
+    					<div id="show_1"></div>
+			<textarea class="noshow" data-index="1">npm install   |   下载依赖
+rimraf node_modules | 删除依赖(需要npm install rimraf -g)</textarea>
+			</div>
+
+<script type="text/javascript">
+$('#article_area').on("click", "img", function(){
+	var url = $(this).attr("src");
+	if(url!=""){
+		window.open(url, "_blank");
+	}
+});
+$('#article_area a').each(function(){
+	var url = $(this).attr("href");
+	if(url.indexOf("://")>-1){
+		if(url.indexOf("mydoc.io") > -1 || url.indexOf("doc.oschina") > -1){
+			return;
+		}
+		$(this).attr('target', '_blank');
+	}
+});
+</script>
+<script type="text/javascript" src="http://jeecg-boot.mydoc.io/action/visit/document_version?id=46091" defer="defer"></script>
+			</div>
+  		</div>
+	</article>
+	<footer id="footer">
+	<div class="outer">
+  		<div id="footer-copyright">
+			<div>
+				Powered By <a href="http://team.oschina.net" target="_blank">Team@OSC</a>
+								|
+                <i class="fa fa-eye" title="文档浏览数"></i> 9911
+							<div>
+      		  		</div>
+	</div>
+</footer>
+<script >
+	$(document).ready(function(){
+		var md = $("#foot_src").val();
+		if(md){$("#foot_show").html(marked(md));}
+	});
+</script>	<span id="up_btn" class="up_btn">
+		<i class="fa fa-arrow-up" title="回到顶部"></i>
+	</span>
+	
+	<script type="text/javascript" src="js/team/document/d-t=1453329166000.js"></script>
+	<script type="text/javascript">
+    	share({
+            text: document.title,
+            url: window.location.href,
+            desc:'快来分享吧'
+		});
+					var currentTextId = 344866;
+				$("#text_"+currentTextId).addClass("current");
+		
+		//回到顶部按钮
+		$(window).scroll(function(){
+		    if ($(window).scrollTop()>100){
+		        $("#up_btn").show();
+		    } else {
+		        $("#up_btn").hide();
+		    }
+		});
+		
+		//当点击跳转链接后，回到页面顶部位置
+		$("#up_btn").click(function(){
+		    $('body,html').animate({scrollTop:0}, 200);
+		    return false;
+		});
+		
+		$(window).resize(function(){
+			resizePicF();
+		});
+		
+		//md2Html的配置
+		hljs.configure({useBR: false});
+		hljs.initHighlightingOnLoad();
+		
+		marked.setOptions({
+		    renderer: new marked.Renderer(),
+		    gfm: true,
+		    emoji: true,
+		    tables: true,
+		    breaks: false,
+		    pedantic: false,
+		    sanitize: true,
+		    smartLists: true,
+		    smartypants: false,
+		    highlight: function (code, lang) {
+		        try {
+		            if (lang)
+		                return hljs.highlight(lang, code).value;
+		        } catch (e) {
+		            return hljs.highlightAuto(code).value;
+		        }
+		        return hljs.highlightAuto(code).value;
+		    }
+		});
+		$(".noshow").each(function(){
+			var index = $(this).data("index");
+			var md = $(this).val();
+            if(md){$("#show_"+index).html(marked(md));}
+		});
+		
+		var resizePicWidth = function(selector, pic_width){
+			$(selector + " img").each(function(){
+				var img = $(this);
+		        var realWidth;	//真实的宽度
+		        var realHeight;		//真实的高度
+		   		//这里做下说明，$("<img/>")这里是创建一个临时的img标签，类似js创建一个new Image()对象！
+		   		$("<img/>").attr("src", $(img).attr("src")).load(function() {
+		        	/*
+		              如果要获取图片的真实的宽度和高度有三点必须注意
+		              1、需要创建一个image对象：如这里的$("<img/>")
+		              2、指定图片的src路径
+		              3、一定要在图片加载完成后执行如.load()函数里执行
+		             */
+		            realWidth = this.width;
+		            realHeight = this.height;
+		           	//如果真实的宽度大于规定的宽度就按照100%显示
+		            if(realWidth>=pic_width){
+		            	$(img).css("width", (pic_width) + "px");
+		           	} else{//如果小于浏览器的宽度按照原尺寸显示
+		            	$(img).css("width",realWidth+'px');
+		          	}
+		        });
+			});
+		}
+		
+		var resizePicF = function(){
+            var cw = $(".page-entry")[0];
+            if(cw) {resizePicWidth(".page-entry", cw.clientWidth);}
+		}
+		resizePicF();
+		$("code").css("background-color", "transparent");
+	</script>
+</body>
+</html>			
+<!-- Generated by OsChina.NET (init:0[ms],page:17[ms],ip:106.2.232.11) -->

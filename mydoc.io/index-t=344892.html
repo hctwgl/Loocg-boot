@@ -1,0 +1,772 @@
+						
+							<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<title>Jeecg-Boot 技术文档_V1.1</title>
+  	<meta name="description" content="jeecg-boot
+前后端分离架构，springboot版本+antd vue前端" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	<link rel="shortcut icon" type="image/x-icon" href="img/32logo_green-t=1451964198000.ico"/>
+	<link href="css/team/document-t=1451964198000.css" rel="stylesheet" />
+	<link href="css/team/font-awesome/font-awesome.min-t=1451964198000.css" rel="stylesheet" />
+  	<link rel="stylesheet" href="css/document/hexo_io/style-t=1453329166000.css" type="text/css">
+	<link rel="stylesheet" href="js/highlight/styles/docco-t=1451964198000.css">
+  	<script src="js/2012/jquery-1.7.1.min-t=1451964198000.js" type="text/javascript"></script>
+	<script src="js/highlight/highlight.pack-t=1451964198000.js"></script>
+    <script type="text/javascript" src="https://static.oschina.net/build/team/javascripts/vendor/markdown/marked.js?t=1468881669000"></script>
+</head>
+
+<body>
+	<header id="header">
+  	<div class="outer">
+    	<div class="inner">
+	      	<div class="navi_icon icon_no_active" id="navi_icon">
+				<i class="fa fa-list"></i>
+			</div>
+	      	<h1 id="logo-wrap" style="font-size: 30px;">
+	      		Jeecg-Boot 技术文档
+	      	</h1>
+	      	<span class="version_s">
+	      		V1.1
+	      	</span>
+	      	<div class="dl_icon" id="dl_icon">
+				<a href="index-p=show&amp;v=46091.html" target="_blank" title="下载当前文档"><i class="fa fa-download"></i></a>
+			</div>
+	      	<nav id="main-nav" class="search_area">
+	        	<input type="text" name="s_q" placeholder="搜索文档的内容" value=""/>
+	        	<input type="button" id="s_btn" value="搜索"/>
+	      	</nav>
+	      	<form action="" method="get" id="s_form" autocomplete="off">
+	        	<input type="hidden" name="q"/>
+	        		        	<input type="hidden" name="p" value="search"/>
+	      	</form>
+      	<div>
+  	</div>
+</header>
+<script type="text/javascript">
+	$("#main-nav").on("keydown", function(e){
+		if (e.keyCode == 13) {
+			$("#s_btn").trigger("click");
+		}
+	});
+	$("#s_btn").on("click", function(){
+		var q = $("input[name='s_q']").val();
+		if(q==""){
+			alert("请输入搜索词");
+			return;
+		}
+		q = encodeURI(q);
+		$("input[name='q']").val(q);
+		$("#s_form").submit();
+	});
+	
+	$("#navi_icon").on("click", function(){
+		if($("#sidebar").hasClass("navi_show")){
+			$("#sidebar").removeClass("navi_show");
+			$("#sidebar").addClass("navi_hidden");
+			$("#navi_icon").removeClass("icon_active");
+			$("#navi_icon").addClass("icon_no_active");
+		}else{
+			$("#sidebar").removeClass("navi_hidden");
+			$("#sidebar").addClass("navi_show");
+			$("#navi_icon").addClass("icon_active");
+			$("#navi_icon").removeClass("icon_no_active");
+		}
+	});
+</script>  	<article class="page">
+  		<div class="outer">
+    		<div id="mobile-menu-wrap"></div>
+			<aside id="sidebar" class="navi_hidden">
+																																																		<a href="index-t=344844.html" id="text_344844" class="sidebar-link document_a">
+									<em class="fa fa fa-angle-right document_em"></em>项目介绍
+								</a>
+																																																							<a href="index-t=344845.html" id="text_344845" class="sidebar-link document_a">
+									<em class="fa fa fa-angle-right document_em"></em>新手学习思路【零基础入门】
+								</a>
+																																	<strong class="sidebar-title">开发环境准备</strong>
+																																					<a href="index-t=344846.html" style="margin-left: 3px" id="text_344846" class="sidebar-link">
+							技术点
+						</a>
+																																										<a href="index-t=344847.html" style="margin-left: 3px" id="text_344847" class="sidebar-link">
+							开发工具安装
+						</a>
+																																										<a href="index-t=344848.html" style="margin-left: 3px" id="text_344848" class="sidebar-link">
+							开发环境搭建
+						</a>
+																																										<a href="index-t=344849.html" style="margin-left: 3px" id="text_344849" class="sidebar-link">
+							如何启动项目
+						</a>
+																																										<a href="index-t=344850.html" style="margin-left: 3px" id="text_344850" class="sidebar-link">
+							Maven私服设置
+						</a>
+																																										<a href="index-t=344902.html" style="margin-left: 3px" id="text_344902" class="sidebar-link">
+							websorm svn下载项目
+						</a>
+																																			<strong class="sidebar-title">快速开始</strong>
+																																					<a href="index-t=344851.html" style="margin-left: 3px" id="text_344851" class="sidebar-link">
+							Hello World
+						</a>
+																																			<strong class="sidebar-title">上线发布</strong>
+																																					<a href="index-t=344852.html" style="margin-left: 3px" id="text_344852" class="sidebar-link">
+							简易发布方案
+						</a>
+																																										<a href="index-t=344853.html" style="margin-left: 3px" id="text_344853" class="sidebar-link">
+							WAR发布方案
+						</a>
+																																			<strong class="sidebar-title">代码生成器用法</strong>
+																																					<a href="index-t=344854.html" style="margin-left: 3px" id="text_344854" class="sidebar-link">
+							如何使用代码生成器？
+						</a>
+																																										<a href="index-t=344855.html" style="margin-left: 3px" id="text_344855" class="sidebar-link">
+							代码生成器模板
+						</a>
+																																			<strong class="sidebar-title">后端开发技巧</strong>
+																																					<a href="index-t=344856.html" style="margin-left: 3px" id="text_344856" class="sidebar-link">
+							常用问题汇总
+						</a>
+																					
+								<strong class="sidebar-title" style="margin-left: 10px">菜单路由配置</strong>
+																																			<a href="index-t=344857.html" style="margin-left: 13px" id="text_344857" class="sidebar-link">
+							菜单配置说明
+						</a>
+																																										<a href="index-t=344867.html" style="margin-left: 13px" id="text_344867" class="sidebar-link">
+							路由菜单规则
+						</a>
+																																										<a href="index-t=344881.html" style="margin-left: 13px" id="text_344881" class="sidebar-link">
+							Online报表菜单如何配置？
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">系统权限</strong>
+																																			<a href="index-t=344871.html" style="margin-left: 13px" id="text_344871" class="sidebar-link">
+							按钮权限用法
+						</a>
+																																										<a href="index-t=344872.html" style="margin-left: 13px" id="text_344872" class="sidebar-link">
+							数据权限用法
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">自定义注解用法</strong>
+																																			<a href="index-t=344873.html" style="margin-left: 13px" id="text_344873" class="sidebar-link">
+							字典翻译注解@Dict
+						</a>
+																																										<a href="index-t=344875.html" style="margin-left: 13px" id="text_344875" class="sidebar-link">
+							日志记录注解@AutoLog
+						</a>
+																																										<a href="index-t=344876.html" style="margin-left: 13px" id="text_344876" class="sidebar-link">
+							数据权限注解@PermissionData
+						</a>
+																																										<a href="index-t=344877.html" style="margin-left: 13px" id="text_344877" class="sidebar-link">
+							Spring缓存注解@Cacheable
+						</a>
+																											
+								<strong class="sidebar-title" style="margin-left: 10px">数据库设计规范</strong>
+																																			<a href="index-t=344882.html" style="margin-left: 13px" id="text_344882" class="sidebar-link">
+							建表规范
+						</a>
+																																																<a href="index-t=344858.html" style="margin-left: 3px" id="text_344858" class="sidebar-link">
+							事务如何使用？
+						</a>
+																																										<a href="index-t=344859.html" style="margin-left: 3px" id="text_344859" class="sidebar-link">
+							系统日志怎么插入？
+						</a>
+																																										<a href="index-t=344860.html" style="margin-left: 3px" id="text_344860" class="sidebar-link">
+							定时任务如何开发？
+						</a>
+																																										<a href="index-t=344861.html" style="margin-left: 3px" id="text_344861" class="sidebar-link">
+							redis 如何使用？
+						</a>
+																																										<a href="index-t=344862.html" style="margin-left: 3px" id="text_344862" class="sidebar-link">
+							动态数据源使用
+						</a>
+																																										<a href="index-t=344885.html" style="margin-left: 3px" id="text_344885" class="sidebar-link">
+							数据日志如何用？
+						</a>
+																																										<a href="index-t=344891.html" style="margin-left: 3px" id="text_344891" class="sidebar-link">
+							查询过滤器用法
+						</a>
+																																										<a href="index-t=344892.html" style="margin-left: 3px" id="text_344892" class="sidebar-link">
+							AutoPOI  EXCEL导出导入工具
+						</a>
+																																			<strong class="sidebar-title">UI前端开发技巧</strong>
+																																					<a href="index-t=344865.html" style="margin-left: 3px" id="text_344865" class="sidebar-link">
+							源码解读
+						</a>
+																																										<a href="index-t=344866.html" style="margin-left: 3px" id="text_344866" class="sidebar-link">
+							常用命令
+						</a>
+																																										<a href="index-t=344868.html" style="margin-left: 3px" id="text_344868" class="sidebar-link">
+							Form 表单开发特殊性
+						</a>
+																																										<a href="index-t=344869.html" style="margin-left: 3px" id="text_344869" class="sidebar-link">
+							报表开发技术点
+						</a>
+																																										<a href="index-t=344870.html" style="margin-left: 3px" id="text_344870" class="sidebar-link">
+							全局配置文件
+						</a>
+																					
+								<strong class="sidebar-title" style="margin-left: 10px">自定义组件</strong>
+																																			<a href="index-t=344863.html" style="margin-left: 13px" id="text_344863" class="sidebar-link">
+							JgEditableTable 帮助文档
+						</a>
+																																										<a href="index-t=344864.html" style="margin-left: 13px" id="text_344864" class="sidebar-link">
+							DictSelectTag字典标签
+						</a>
+																																										<a href="index-t=344874.html" style="margin-left: 13px" id="text_344874" class="sidebar-link">
+							高级查询组件文档和示例
+						</a>
+																																										<a href="index-t=344890.html" style="margin-left: 13px" id="text_344890" class="sidebar-link">
+							components包下文件描述
+						</a>
+																																									<strong class="sidebar-title">Online开发</strong>
+																
+								<strong class="sidebar-title" style="margin-left: 10px">Online图表</strong>
+																	
+								<strong class="sidebar-title" style="margin-left: 10px">Online表单</strong>
+																																			<a href="index-t=345038.html" style="margin-left: 13px" id="text_345038" class="sidebar-link">
+							online 自定义按钮
+						</a>
+																																										<a href="index-t=345055.html" style="margin-left: 13px" id="text_345055" class="sidebar-link">
+							online JS增强
+						</a>
+																																										<a href="index-t=345058.html" style="margin-left: 13px" id="text_345058" class="sidebar-link">
+							online SQL增强
+						</a>
+																																										<a href="index-t=345059.html" style="margin-left: 13px" id="text_345059" class="sidebar-link">
+							online java增强
+						</a>
+																																				</aside>
+			<div class="page-content" id="article_area">
+					<div style="padding: 20px 0; border-bottom: 1px dashed #ccc">
+	<h1 id="page-title" itemprop="name">AutoPOI  EXCEL导出导入工具</h1>
+</div>
+<div class="page-entry" itemprop="articleBody">
+    					<div id="show_1"></div>
+			<textarea class="noshow" data-index="1">AutoPOI (Excel和 Word简易工具类  EasyPOI衍变升级版）
+===========================
+
+ AutoPOI 功能如同名字auto，追求的就是自动化，让一个没接触过poi的人员，可以傻瓜式半智能化的快速实现Excel导入导出、Word模板导出、可以仅仅5行代码就可以完成Excel的导入导出。
+	
+---------------------------
+AutoPOI的主要特点
+--------------------------
+	1.设计精巧,使用简单
+	2.接口丰富,扩展简单
+	3.默认值多,write less do more
+	4.AbstractView 支持,web导出可以简单明了
+
+---------------------------
+AutoPOI的几个入口工具类
+---------------------------
+
+	1.ExcelExportUtil Excel导出(普通导出,模板导出)
+	2.ExcelImportUtil Excel导入
+	3.WordExportUtil  Word导出(只支持docx ,doc版本poi存在图片的bug,暂不支持)
+	
+---------------------------
+关于Excel导出XLS和XLSX区别
+---------------------------
+
+	1.导出时间XLS比XLSX快2-3倍
+	2.导出大小XLS是XLSX的2-3倍或者更多
+	3.导出需要综合网速和本地速度做考虑^~^
+	
+---------------------------
+几个工程的说明
+---------------------------
+	1.autopoi-parent 父包--作用大家都懂得
+	2.autopoi 导入导出的工具包,可以完成Excel导出,导入,Word的导出,Excel的导出功能
+	3.autopoi-web  耦合了spring-mvc 基于AbstractView,极大的简化spring-mvc下的导出功能
+	4.sax 导入使用xercesImpl这个包(这个包可能造成奇怪的问题哈),word导出使用poi-scratchpad,都作为可选包了
+--------------------------
+maven 
+--------------------------
+
+```xml
+	&lt;dependency&gt;
+	 &lt;groupId&gt;org.jeecgframework&lt;/groupId&gt;
+	 &lt;artifactId&gt;autopoi-web&lt;/artifactId&gt;
+	 &lt;version&gt;1.0.2&lt;/version&gt;
+	&lt;/dependency&gt;
+```
+
+--------------------------
+AutoPoi 模板 表达式支持
+--------------------------
+- 空格分割
+- 三目运算  {{test ? obj:obj2}}
+- n: 表示 这个cell是数值类型 {{n:}}
+- le: 代表长度{{le:()}} 在if/else 运用{{le:() &gt; 8 ? obj1 :  obj2}}
+- fd: 格式化时间 {{fd:(obj;yyyy-MM-dd)}}
+- fn: 格式化数字 {{fn:(obj;###.00)}}
+- fe: 遍历数据,创建row
+- !fe: 遍历数据不创建row 
+- $fe: 下移插入,把当前行,下面的行全部下移.size()行,然后插入
+- !if: 删除当前列 {{!if:(test)}}
+- 单引号表示常量值 ''  比如'1' 那么输出的就是 1
+
+
+---------------------------
+AutoPoi导出实例
+---------------------------
+1.注解,导入导出都是基于注解的,实体上做上注解,标示导出对象,同时可以做一些操作
+
+```Java
+	@ExcelTarget("courseEntity")
+	public class CourseEntity implements java.io.Serializable {
+	/** 主键 */
+	private String id;
+	/** 课程名称 */
+	@Excel(name = "课程名称", orderNum = "1", needMerge = true)
+	private String name;
+	/** 老师主键 */
+	@ExcelEntity(id = "yuwen")
+	@ExcelVerify()
+	private TeacherEntity teacher;
+	/** 老师主键 */
+	@ExcelEntity(id = "shuxue")
+	private TeacherEntity shuxueteacher;
+
+	@ExcelCollection(name = "选课学生", orderNum = "4")
+	private List&lt;StudentEntity&gt; students;
+```
+
+2.基础导出
+	传入导出参数,导出对象,以及对象列表即可完成导出
+	
+```Java
+	HSSFWorkbook workbook = ExcelExportUtil.exportExcel(new ExportParams(
+				"2412312", "测试", "测试"), CourseEntity.class, list);
+```
+
+3.基础导出,带有索引
+	在到处参数设置一个值,就可以在导出列增加索引
+	
+```Java
+	ExportParams params = new ExportParams("2412312", "测试", "测试");
+	params.setAddIndex(true);
+	HSSFWorkbook workbook = ExcelExportUtil.exportExcel(params,
+			TeacherEntity.class, telist);
+```			
+
+4.导出Map
+	创建类似注解的集合,即可完成Map的导出,略有麻烦
+	
+```Java
+	List&lt;ExcelExportEntity&gt; entity = new ArrayList&lt;ExcelExportEntity&gt;();
+	entity.add(new ExcelExportEntity("姓名", "name"));
+	entity.add(new ExcelExportEntity("性别", "sex"));
+
+	List&lt;Map&lt;String, String&gt;&gt; list = new ArrayList&lt;Map&lt;String, String&gt;&gt;();
+	Map&lt;String, String&gt; map;
+	for (int i = 0; i &lt; 10; i++) {
+		map = new HashMap&lt;String, String&gt;();
+		map.put("name", "1" + i);
+		map.put("sex", "2" + i);
+		list.add(map);
+	}
+
+	HSSFWorkbook workbook = ExcelExportUtil.exportExcel(new ExportParams(
+			"测试", "测试"), entity, list);	
+```		
+	
+5.模板导出
+	根据模板配置,完成对应导出
+	
+```Java
+	TemplateExportParams params = new TemplateExportParams();
+	params.setHeadingRows(2);
+	params.setHeadingStartRow(2);
+	Map&lt;String,Object&gt; map = new HashMap&lt;String, Object&gt;();
+    map.put("year", "2013");
+    map.put("sunCourses", list.size());
+    Map&lt;String,Object&gt; obj = new HashMap&lt;String, Object&gt;();
+    map.put("obj", obj);
+    obj.put("name", list.size());
+	 params.setTemplateUrl("org/jeecgframework/poi/excel/doc/exportTemp.xls");
+	Workbook book = ExcelExportUtil.exportExcel(params, CourseEntity.class, list,
+			map);
+```			
+
+6.导入
+	设置导入参数,传入文件或者流,即可获得相应的list
+	
+```Java
+	ImportParams params = new ImportParams();
+	params.setTitleRows(2);
+	params.setHeadRows(2);
+	//params.setSheetNum(9);
+	params.setNeedSave(true);
+	long start = new Date().getTime();
+	List&lt;CourseEntity&gt; list = ExcelImportUtil.importExcel(new File(
+			"d:/tt.xls"), CourseEntity.class, params);
+```	
+
+7.SpringMvc的无缝融合
+	简单几句话,Excel导出搞定
+	
+```Java
+	@RequestMapping(value = "/exportXls")
+	public ModelAndView exportXls(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
+		List&lt;JeecgDemo&gt; pageList = jeecgDemoService.list();
+		//导出文件名称
+		mv.addObject(NormalExcelConstants.FILE_NAME,"导出Excel文件名字");
+		//注解对象Class
+		mv.addObject(NormalExcelConstants.CLASS,JeecgDemo.class);
+		//自定义表格参数
+		mv.addObject(NormalExcelConstants.PARAMS,new ExportParams("自定义导出Excel模板内容标题", "自定义Sheet名字"));
+		//导出数据列表
+		mv.addObject(NormalExcelConstants.DATA_LIST,pageList);
+		return mv;
+	}
+```
+
+
+| 自定义视图 | 用途 |  描述 |
+| ------ | ------ | ------ |
+| JeecgMapExcelView | 实体对象导出视图 | 例如：List&lt;JeecgDemo&gt; |
+| JeecgEntityExcelView | Map对象导出视图 | List&lt;Map&lt;String, String&gt;&gt; list |
+| JeecgTemplateExcelView | Excel模板导出视图 | - | 
+| JeecgTemplateWordView | Word模板导出视图 | - |
+
+
+8.Excel导入校验,过滤不符合规则的数据,追加错误信息到Excel,提供常用的校验规则,已经通用的校验接口
+
+```Java
+	/**
+     * Email校验
+     */
+    @Excel(name = "Email", width = 25)
+    @ExcelVerify(isEmail = true, notNull = true)
+    private String email;
+    /**
+     * 手机号校验
+     */
+    @Excel(name = "Mobile", width = 20)
+    @ExcelVerify(isMobile = true, notNull = true)
+    private String mobile;
+    
+    ExcelImportResult&lt;ExcelVerifyEntity&gt; result = ExcelImportUtil.importExcelVerify(new File(
+            "d:/tt.xls"), ExcelVerifyEntity.class, params);
+    for (int i = 0; i &lt; result.getList().size(); i++) {
+        System.out.println(ReflectionToStringBuilder.toString(result.getList().get(i)));
+    }
+```
+
+9.导入Map
+	设置导入参数,传入文件或者流,即可获得相应的list,自定义Key,需要实现IExcelDataHandler接口
+	
+```Java
+	ImportParams params = new ImportParams();
+	List&lt;Map&lt;String,Object&gt;&gt; list = ExcelImportUtil.importExcel(new File(
+			"d:/tt.xls"), Map.class, params);
+```
+
+10.字典用法
+        在实体属性注解excel中添加dicCode="",此处dicCode即为jeecg系统中数据字典的Code
+	
+```Java
+   @Excel(name="性别",width=15,dicCode="sex")
+   private java.lang.String sex;
+```
+
+11.字典表用法
+       此处dictTable为数据库表名，dicCode为关联字段名，dicText为excel中显示的内容对应的字段
+	
+```Java
+	@Excel(name="部门",dictTable="t_s_depart",dicCode="id",dicText="departname")
+    private java.lang.String depart;
+```
+
+12.Replace用法
+       若数据库中存储的是0/1 ，则导出/导入的excel单元格中显示的是女/男
+	
+```Java
+	@Excel(name="测试替换",width=15,replace={"男_1","女_0"})
+	private java.lang.String fdReplace;
+```
+
+13.高级字段转换用法
+- exportConvert：在导出的时候需要替换值则配置该值为true，同时增加一个方法，方法名为原get方法名前加convert。
+- importConvert：在导入的时候需要替换值则配置该值为true，同时增加一个方法，方法名为原set方法名前加convert。
+
+```Java
+	@Excel(name="测试转换",width=15,exportConvert=true,importConvert=true)
+	private java.lang.String fdConvert;
+	
+	/**
+	  * 转换值示例： 在该字段值的后面加上元
+	  * @return
+	  */
+	public String convertgetFdConvert(){
+	  return this.fdConvert+"元";
+	}
+	  
+	/**
+	 * 转换值示例： 替换掉excel单元格中的"元"
+	 * @return
+	 */
+	public void convertsetFdConvert(String fdConvert){
+	  this.fdConvert = fdConvert.replace("元","");
+	}
+```
+
+---------------------------
+ Excel 注解说明
+---------------------------
+
+@Excel
+
+| 属性             | 类型       | 默认值              | 功能                                                                     |
+|----------------|----------|------------------|------------------------------------------------------------------------|
+| name           | String   | null             | 列名,支持name_id                                                           |
+| needMerge      | boolean  | fasle            | 是否需要纵向合并单元格(用于含有list中,单个的单元格,合并list创建的多个row)                           |
+| orderNum       | String   | "0"              | 列的排序,支持name_id                                                         |
+| replace        | String[] | {}               | 值得替换 导出是{a_id,b_id} 导入反过来                                              |
+| savePath       | String   | "upload"         | 导入文件保存路径,如果是图片可以填写,默认是upload/className/ IconEntity这个类对应的就是upload/Icon/ |
+| type           | int      | 1                | 导出类型 1 是文本 2 是图片,3 是函数,10 是数字 默认是文本                                    |
+| width          | double   | 10               | 列宽                                                                     |
+| height         | double   | 10               | 列高,后期打算统一使用@ExcelTarget的height,这个会被废弃,注意                               |
+| isStatistics   | boolean  | fasle            | 自动统计数据,在追加一行统计,把所有数据都和输出 这个处理会吞没异常,请注意这一点                              |
+| isHyperlink    | boolean  | FALSE            | 超链接,如果是需要实现接口返回对象                                                      |
+| isImportField  | boolean  | TRUE             | 校验字段,看看这个字段是不是导入的Excel中有,如果没有说明是错误的Excel,读取失败,支持name_id                |
+| exportFormat   | String   | ""               | 导出的时间格式,以这个是否为空来判断是否需要格式化日期                                            |
+| importFormat   | String   | ""               | 导入的时间格式,以这个是否为空来判断是否需要格式化日期                                            |
+| format         | String   | ""               | 时间格式,相当于同时设置了exportFormat 和 importFormat                               |
+| databaseFormat | String   | "yyyyMMddHHmmss" | 导出时间设置,如果字段是Date类型则不需要设置 数据库如果是string 类型,这个需要设置这个数据库格式,用以转换时间格式输出      |
+| numFormat      | String   | ""               | 数字格式化,参数是Pattern,使用的对象是DecimalFormat                                   |
+| imageType      | int      | 1                | 导出类型 1 从file读取 2 是从数据库中读取 默认是文件 同样导入也是一样的                              |
+| suffix         | String   | ""               | 文字后缀,如% 90 变成90%                                                       |
+| isWrap         | boolean  | TRUE             | 是否换行 即支持\n                                                             |
+| mergeRely      | int[]    | {}               | 合并单元格依赖关系,比如第二列合并是基于第一列 则{0}就可以了                                       |
+| mergeVertical  | boolean  | fasle            | 纵向合并内容相同的单元格                                                           |
+| fixedIndex     | int      | -1               | 对应excel的列,忽略名字                                                         |
+| isColumnHidden | boolean  | FALSE            | 导出隐藏列                                                                  |
+
+
+@ExcelCollection
+
+| 属性       | 类型       | 默认值             | 功能               |
+|----------|----------|-----------------|------------------|
+| id       | String   | null            | 定义ID             |
+| name     | String   | null            | 定义集合列名,支持nanm_id |
+| orderNum | int      | 0               | 排序,支持name_id     |
+| type     | Class&lt;?&gt; | ArrayList.class | 导入时创建对象使用        |
+
+
+
+单表导出实体注解源码
+
+```Java
+public class SysUser implements Serializable {
+
+    /**id*/
+    private String id;
+
+    /**登录账号 */
+    @Excel(name = "登录账号", width = 15)
+    private String username;
+
+    /**真实姓名*/
+    @Excel(name = "真实姓名", width = 15)
+    private String realname;
+
+    /**头像*/
+    @Excel(name = "头像", width = 15)
+    private String avatar;
+
+    /**生日*/
+    @Excel(name = "生日", width = 15, format = "yyyy-MM-dd")
+    private Date birthday;
+
+    /**性别（1：男 2：女）*/
+    @Excel(name = "性别", width = 15,dicCode="sex")
+    private Integer sex;
+
+    /**电子邮件*/
+    @Excel(name = "电子邮件", width = 15)
+    private String email;
+
+    /**电话*/
+    @Excel(name = "电话", width = 15)
+    private String phone;
+
+    /**状态(1：正常  2：冻结 ）*/
+    @Excel(name = "状态", width = 15,replace={"正常_1","冻结_0"})
+    private Integer status;
+```
+
+一对多导出实体注解源码
+
+```Java
+@Data
+public class JeecgOrderMainPage {
+	
+	/**主键*/
+	private java.lang.String id;
+	/**订单号*/
+	@Excel(name="订单号",width=15)
+	private java.lang.String orderCode;
+	/**订单类型*/
+	private java.lang.String ctype;
+	/**订单日期*/
+	@Excel(name="订单日期",width=15,format = "yyyy-MM-dd")
+	private java.util.Date orderDate;
+	/**订单金额*/
+	@Excel(name="订单金额",width=15)
+	private java.lang.Double orderMoney;
+	/**订单备注*/
+	private java.lang.String content;
+	/**创建人*/
+	private java.lang.String createBy;
+	/**创建时间*/
+	private java.util.Date createTime;
+	/**修改人*/
+	private java.lang.String updateBy;
+	/**修改时间*/
+	private java.util.Date updateTime;
+	
+	@ExcelCollection(name="客户")
+	private List&lt;JeecgOrderCustomer&gt; jeecgOrderCustomerList;
+	@ExcelCollection(name="机票")
+	private List&lt;JeecgOrderTicket&gt; jeecgOrderTicketList;
+}
+```
+</textarea>
+			</div>
+
+<script type="text/javascript">
+$('#article_area').on("click", "img", function(){
+	var url = $(this).attr("src");
+	if(url!=""){
+		window.open(url, "_blank");
+	}
+});
+$('#article_area a').each(function(){
+	var url = $(this).attr("href");
+	if(url.indexOf("://")>-1){
+		if(url.indexOf("mydoc.io") > -1 || url.indexOf("doc.oschina") > -1){
+			return;
+		}
+		$(this).attr('target', '_blank');
+	}
+});
+</script>
+<script type="text/javascript" src="http://jeecg-boot.mydoc.io/action/visit/document_version?id=46091" defer="defer"></script>
+			</div>
+  		</div>
+	</article>
+	<footer id="footer">
+	<div class="outer">
+  		<div id="footer-copyright">
+			<div>
+				Powered By <a href="http://team.oschina.net" target="_blank">Team@OSC</a>
+								|
+                <i class="fa fa-eye" title="文档浏览数"></i> 9911
+							<div>
+      		  		</div>
+	</div>
+</footer>
+<script >
+	$(document).ready(function(){
+		var md = $("#foot_src").val();
+		if(md){$("#foot_show").html(marked(md));}
+	});
+</script>	<span id="up_btn" class="up_btn">
+		<i class="fa fa-arrow-up" title="回到顶部"></i>
+	</span>
+	
+	<script type="text/javascript" src="js/team/document/d-t=1453329166000.js"></script>
+	<script type="text/javascript">
+    	share({
+            text: document.title,
+            url: window.location.href,
+            desc:'快来分享吧'
+		});
+					var currentTextId = 344892;
+				$("#text_"+currentTextId).addClass("current");
+		
+		//回到顶部按钮
+		$(window).scroll(function(){
+		    if ($(window).scrollTop()>100){
+		        $("#up_btn").show();
+		    } else {
+		        $("#up_btn").hide();
+		    }
+		});
+		
+		//当点击跳转链接后，回到页面顶部位置
+		$("#up_btn").click(function(){
+		    $('body,html').animate({scrollTop:0}, 200);
+		    return false;
+		});
+		
+		$(window).resize(function(){
+			resizePicF();
+		});
+		
+		//md2Html的配置
+		hljs.configure({useBR: false});
+		hljs.initHighlightingOnLoad();
+		
+		marked.setOptions({
+		    renderer: new marked.Renderer(),
+		    gfm: true,
+		    emoji: true,
+		    tables: true,
+		    breaks: false,
+		    pedantic: false,
+		    sanitize: true,
+		    smartLists: true,
+		    smartypants: false,
+		    highlight: function (code, lang) {
+		        try {
+		            if (lang)
+		                return hljs.highlight(lang, code).value;
+		        } catch (e) {
+		            return hljs.highlightAuto(code).value;
+		        }
+		        return hljs.highlightAuto(code).value;
+		    }
+		});
+		$(".noshow").each(function(){
+			var index = $(this).data("index");
+			var md = $(this).val();
+            if(md){$("#show_"+index).html(marked(md));}
+		});
+		
+		var resizePicWidth = function(selector, pic_width){
+			$(selector + " img").each(function(){
+				var img = $(this);
+		        var realWidth;	//真实的宽度
+		        var realHeight;		//真实的高度
+		   		//这里做下说明，$("<img/>")这里是创建一个临时的img标签，类似js创建一个new Image()对象！
+		   		$("<img/>").attr("src", $(img).attr("src")).load(function() {
+		        	/*
+		              如果要获取图片的真实的宽度和高度有三点必须注意
+		              1、需要创建一个image对象：如这里的$("<img/>")
+		              2、指定图片的src路径
+		              3、一定要在图片加载完成后执行如.load()函数里执行
+		             */
+		            realWidth = this.width;
+		            realHeight = this.height;
+		           	//如果真实的宽度大于规定的宽度就按照100%显示
+		            if(realWidth>=pic_width){
+		            	$(img).css("width", (pic_width) + "px");
+		           	} else{//如果小于浏览器的宽度按照原尺寸显示
+		            	$(img).css("width",realWidth+'px');
+		          	}
+		        });
+			});
+		}
+		
+		var resizePicF = function(){
+            var cw = $(".page-entry")[0];
+            if(cw) {resizePicWidth(".page-entry", cw.clientWidth);}
+		}
+		resizePicF();
+		$("code").css("background-color", "transparent");
+	</script>
+</body>
+</html>			
+<!-- Generated by OsChina.NET (init:1[ms],page:18[ms],ip:106.2.232.11) -->
